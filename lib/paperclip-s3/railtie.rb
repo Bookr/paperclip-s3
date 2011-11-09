@@ -13,15 +13,15 @@ module Paperclip
 
     class Railtie
       def self.insert
-        in_production = false
+        in_staging = false
 
         if (defined?(Rails.env) && Rails.env)
-          in_production = Rails.env.production?
+          in_staging = Rails.env.staging?
         elsif (defined?(RAILS_ENV) && RAILS_ENV)
-          in_production = RAILS_ENV =~ /production/
+          in_staging = RAILS_ENV =~ /staging/
         end
 
-        ActiveRecord::Base.send(:include, Paperclip::S3::Glue) if in_production
+        ActiveRecord::Base.send(:include, Paperclip::S3::Glue) if in_staging
       end
     end
   end
