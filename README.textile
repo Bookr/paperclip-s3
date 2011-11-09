@@ -1,6 +1,6 @@
 h1. Paperclip S3 Storage
 
-This gem will force paperclip to store attachments on S3 if your application is in production. It's great for "Heroku":http://heroku.com apps.
+This gem will force paperclip to store attachments on S3 if your application is in *staging*. It's great for "Heroku":http://heroku.com apps.
 
 h1. Important Notes
 
